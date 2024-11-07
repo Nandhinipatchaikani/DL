@@ -1,0 +1,13 @@
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+tp = 687
+tn = 691
+fp = 63
+fn = 59
+conf_matrix = np.array([[tp, fn], [fp, tn]])
+sns.heatmap(conf_matrix, annot=True, fmt='g', xticklabels=['Normal', 'CNV'], yticklabels=['Normal', 'CNV'], cmap='hot')
+plt.ylabel("Output class", fontsize=16)
+plt.xlabel("Target class", fontsize=16)
+plt.title("Confusion Matrix", fontsize=20)
+plt.show()
